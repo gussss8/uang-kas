@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistem Uang Kas Kelas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Sistem Pembayaran Uang Kas Kelas X DKV</h1>
+
+  <div class="container">
+    <form id="formKas">
+      <input type="text" id="nama" placeholder="Nama Siswa" required>
+      <select id="bulan">
+        <option value="">Pilih Bulan</option>
+        <option value="Januari">Januari</option>
+        <option value="Februari">Februari</option>
+        <option value="Maret">Maret</option>
+        <option value="April">April</option>
+        <option value="Mei">Mei</option>
+        <option value="Juni">Juni</option>
+        <option value="Juli">Juli</option>
+        <option value="Agustus">Agustus</option>
+        <option value="September">September</option>
+        <option value="Oktober">Oktober</option>
+        <option value="November">November</option>
+        <option value="Desember">Desember</option>
+      </select>
+      <select id="minggu">
+        <option value="">Pilih Minggu</option>
+        <option value="1">Minggu 1</option>
+        <option value="2">Minggu 2</option>
+        <option value="3">Minggu 3</option>
+        <option value="4">Minggu 4</option>
+      </select>
+      <input type="number" id="jumlah" placeholder="Jumlah Uang (Rp)" required min="0">
+      <button type="submit">Simpan</button>
+    </form>
+
+    <div class="filter">
+      <label for="filterBulan">Lihat Bulan:</label>
+      <select id="filterBulan">
+        <option value="">-- Pilih Bulan --</option>
+      </select>
+      <button id="printBtn">🖨️ Print Laporan</button>
+
+      <div class="backup-controls">
+        <button id="exportBtn">💾 Simpan Data</button>
+        <button id="importBtn">📂 Muat Data</button>
+        <input type="file" id="importFile" accept=".json" style="display:none">
+      </div>
+    </div>
+
+    <table id="tabelKas">
+      <thead>
+  <tr>
+    <th>No</th>
+    <th>Nama</th>
+    <th>Minggu 1</th>
+    <th>Minggu 2</th>
+    <th>Minggu 3</th>
+    <th>Minggu 4</th>
+    <th>Total (Rp)</th>
+    <th>Aksi</th> <!-- kolom baru untuk tombol edit -->
+  </tr>
+</thead>
+
+      <tbody></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="7">Total Kas Bulan Ini</td>
+          <td id="totalKas">Rp 0</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
